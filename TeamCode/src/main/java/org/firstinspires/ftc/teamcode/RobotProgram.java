@@ -37,6 +37,16 @@ public class RobotProgram extends LinearOpMode
             while (opModeIsActive())
             {
 
+                // drive code
+                double ly, lx, rx;
+                ly = gamepad1.left_stick_y;
+                lx = gamepad1.left_stick_x;
+                rx = gamepad1.right_stick_x;
+
+                frontleft.setPower( ly + rx + lx);
+                frontright.setPower(ly - rx - lx);
+                backleft.setPower(  ly + rx - lx);
+                backright.setPower( ly - rx + lx);
             }
         }
     }
